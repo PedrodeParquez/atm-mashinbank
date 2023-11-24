@@ -1,0 +1,39 @@
+﻿<Page x:Class="atm_mashinbank.Views.SuccsessfulDepositScreen"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:atm_mashinbank.Views"
+      mc:Ignorable="d" 
+      d:DesignHeight="265" d:DesignWidth="458"
+      Title="SuccsessfulDepositScreen">
+
+    <Grid Background="#E4C865">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="130"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="75"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Text="Внесение наличных" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="26" Height="34" Width="244"/>
+        <Image Source="C:\Users\Егор\source\repos\atm-mashinbank\Resources\Images\CheckMark.png" Grid.RowSpan="2" Margin="9,20,-9,0"/>
+        <TextBlock Grid.Row="2" Text="Операция выполнена" FontSize="26" HorizontalAlignment="Center" VerticalAlignment="Center" Height="36" Width="260"/>
+
+        <Grid Grid.Row="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+
+            <Button Grid.Column="0" Margin="13,30,106,10" Background="#C92F2F">
+                <TextBlock FontSize="22" Width="100" Height="35" Text="   Выход "/>
+            </Button>
+            <Button Grid.Column="1" Margin="106,30,13,10" Background="#C92F2F">
+                <TextBlock Width="100" Height="35" FontSize="19">
+                    На главную
+                </TextBlock>
+            </Button>
+        </Grid>
+    </Grid>
+</Page>
