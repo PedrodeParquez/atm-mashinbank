@@ -1,0 +1,186 @@
+﻿<ResourceDictionary 
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Style x:Key="GrayButtonStyle" TargetType="Button">
+        <Setter Property="Background" Value="LightGray"/>
+        <Setter Property="Foreground" Value="Black"/>
+        <Setter Property="Padding" Value="0"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="BorderBrush" Value="LightGray"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            Padding="{TemplateBinding Padding}">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="#E0E0E0"/>
+                <Setter Property="BorderBrush" Value="#E0E0E0"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="LightGrayButtonStyle" TargetType="Button">
+        <Setter Property="Background" Value="#9C9A9A"/>
+        <Setter Property="Foreground" Value="Black"/>
+        <Setter Property="Padding" Value="0"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="BorderBrush" Value="#9C9A9A"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            Padding="{TemplateBinding Padding}">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="LightGray"/>
+                <Setter Property="BorderBrush" Value="LightGray"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="RedButtonStyle" TargetType="Button">
+        <Setter Property="Background" Value="Red"/>
+        <Setter Property="Foreground" Value="Black"/>
+        <Setter Property="Padding" Value="0"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="BorderBrush" Value="Red"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            Padding="{TemplateBinding Padding}">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="#FF3333"/>
+                <Setter Property="BorderBrush" Value="#FF3333"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="YellowButtonStyle" TargetType="Button">
+        <Setter Property="Background" Value="Yellow"/>
+        <Setter Property="Foreground" Value="Black"/>
+        <Setter Property="Padding" Value="0"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="BorderBrush" Value="Yellow"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            Padding="{TemplateBinding Padding}">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="#FFFF99"/>
+                <Setter Property="BorderBrush" Value="#FFFF99"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="GreenButtonStyle" TargetType="Button">
+        <Setter Property="Background" Value="#23C120"/>
+        <Setter Property="Foreground" Value="Black"/>
+        <Setter Property="Padding" Value="0"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="BorderBrush" Value="#23C120"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            Padding="{TemplateBinding Padding}">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="#2DD22D"/>
+                <Setter Property="BorderBrush" Value="#2DD22D"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="CustomButtonStyle" TargetType="Button">
+        <Setter Property="Background" Value="#C92F2F"/>
+        <Setter Property="Foreground" Value="Black"/>
+        <Setter Property="Padding" Value="0"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="BorderBrush" Value="#C92F2F"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            Padding="{TemplateBinding Padding}">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="#DB4848"/>
+                <Setter Property="BorderBrush" Value="#DB4848"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="ButtonStyle" TargetType="Button">
+        <Setter Property="Background" Value="#E4C865"/>
+        <Setter Property="Foreground" Value="Black"/>
+        <Setter Property="Padding" Value="0"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="BorderBrush" Value="#E4C865"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            Padding="{TemplateBinding Padding}">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="#F2DB8E"/>
+                <Setter Property="BorderBrush" Value="#F2DB8E"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+</ResourceDictionary>

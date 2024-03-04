@@ -1,0 +1,23 @@
+﻿<Page x:Class="atm_mashinbank.Views.PinCodeScreen"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:atm_mashinbank.Views"
+      mc:Ignorable="d" 
+      d:DesignHeight="265" d:DesignWidth="458"
+      Title="PinCodeScreen">
+
+    <Grid Background="#E4C865">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="150"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="65"/>
+        </Grid.RowDefinitions>
+
+
+        <Image  Source="C:\Users\Егор\source\repos\atm-mashinbank\Resources\Images\Logo_MashinBank.png" Margin="-66,-60,-66,20" Grid.RowSpan="3"/>
+        <PasswordBox x:Name="TextBox_PIN" Background="#C92F2F" Grid.Row="1" Margin="119,13,119,0" FontSize="35" CaretBrush="Transparent" MaxLength="4" PasswordChar="*" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" PreviewTextInput="TextBox_PIN_PreviewTextInput"/>
+        <TextBlock Grid.Row="2" Margin="129,0,129,0" FontSize="25" Height="37" VerticalAlignment="Top">Введите пин-код</TextBlock>
+    </Grid>
+</Page>

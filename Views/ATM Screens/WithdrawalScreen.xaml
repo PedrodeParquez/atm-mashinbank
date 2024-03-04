@@ -1,0 +1,42 @@
+﻿<Page x:Class="atm_mashinbank.Views.WithdrawalScreen"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      mc:Ignorable="d" 
+      d:DesignHeight="265" d:DesignWidth="458"
+      Title="WithdrawalScreen">
+
+    <Page.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Resources/ResourceDictionary.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Page.Resources>
+
+    <Grid Background="#E4C865">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="35"/>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="55"/>
+            <RowDefinition Height="60"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0" Text="Снятие наличных" FontSize="25" TextAlignment="Center"/>
+        <TextBlock Grid.Row="1" Text="Введите сумму"   FontSize="30" TextAlignment="Center" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,15,0,0" Height="37" Width="222"/>
+        <TextBox   Grid.Row="2" Background="#C92F2F" Margin="0,5,0,0" CaretBrush="Transparent" Text=" ₽" FontFamily="Arial" FontSize="35" TextAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Name="TextBox_Withdrawal" IsReadOnly="True"/>
+        <Button    Grid.Row="3"  Style="{StaticResource CustomButtonStyle}" HorizontalAlignment="Center" VerticalAlignment="Top" Height="40" Width="98" Margin="0,10,0,0" Click="Withdrawal_Button_Click">
+            <TextBlock TextAlignment="Center" FontSize="28" VerticalAlignment="Center" HorizontalAlignment="Center" Height="44" Width="104" >
+                Снять
+            </TextBlock>
+        </Button>
+
+        <Button Grid.Row="4" Margin="320,0,10,0" Height="30" VerticalAlignment="Center" Style="{StaticResource CustomButtonStyle}" Click="Home_Button_Click">
+            <TextBlock FontSize="23" Height="35" VerticalAlignment="Center" HorizontalAlignment="Center">
+                На главную
+            </TextBlock>
+        </Button>
+    </Grid>
+</Page>

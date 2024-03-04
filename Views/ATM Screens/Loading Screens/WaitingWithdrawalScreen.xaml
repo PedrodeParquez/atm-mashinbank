@@ -1,0 +1,26 @@
+﻿<Page x:Class="atm_mashinbank.Views.WaitingWithdrawalScreen"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:atm_mashinbank.Views"
+      mc:Ignorable="d" 
+      d:DesignHeight="265" d:DesignWidth="458"
+      Title="WaitingWithdrawalScreen">
+
+    <Grid Background="#E4C865">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="75"/>
+            <RowDefinition Height="150"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0" FontSize="25" TextAlignment="Center" Text="Снятие наличных"/>
+        <TextBlock Grid.Row="1" FontSize="25" TextAlignment="Center">
+            Ожидайте,
+                <LineBreak/>
+            операция выполняется
+        </TextBlock>
+        <Image    Grid.Row="2" Source="C:\Users\Егор\source\repos\atm-mashinbank\Resources\Images\Loading_Icon.png" Margin="0,5,-1,20"/>
+    </Grid>
+</Page>
