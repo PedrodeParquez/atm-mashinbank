@@ -1,7 +1,6 @@
-﻿using System.Text.RegularExpressions;
+﻿using atm_mashinbank.Views.Message_Box;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Input;
 
 namespace atm_mashinbank.Views {
   public partial class DepositScreen : Page {
@@ -22,10 +21,12 @@ namespace atm_mashinbank.Views {
       if (double.TryParse(depositText, out double depositAmount) && depositAmount <= 1000) {
         await window.ChangeScreen(1000, new WaitingDepositScreen());
         await window.ChangeScreen(2000, new SuccsessfulDepositScreen());
+
+        Custom_MessageBox.Show("Успешно", "Баланс: ", "Наличные: ");
         return;
       }
 
-      MessageBox.Show("Недостаточно средств для внесения!\nПовторите попытку!");
+      Custom_MessageBox.Show("Предупреждение", "Недостаточно средств для внесения!", "Повторите попытку!");
     }
   }
 }

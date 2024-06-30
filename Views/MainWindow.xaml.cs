@@ -1,13 +1,12 @@
 ﻿using atm_mashinbank.Views;
-using atm_mashinbank.Model;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
+using atm_mashinbank.Views.Message_Box;
 
 namespace atm_mashinbank {
   public partial class MainWindow : Window {
-    private CustomSoundPlayer backgroundMusicPlayer;
 
     bool CardIn = false;
     int attempts = 0;
@@ -15,7 +14,6 @@ namespace atm_mashinbank {
     public MainWindow() {
       InitializeComponent();
       
-      backgroundMusicPlayer = new CustomSoundPlayer("C:\\Users\\Егор\\source\\repos\\atm-mashinbank\\Resources\\Sounds\\Music\\Background_Music.wav");
       Screen.Content = new HomeScreen();
     }
 
@@ -127,18 +125,11 @@ namespace atm_mashinbank {
         return;
       }
 
-      if (Screen.Content is DepositScreen) {
+      if (Screen.Content is DepositScreen || Screen.Content is WithdrawalScreen || Screen.Content is PersonalPageScreen) {
         await ChangeScreen(1000, new LoadingScreen());
         await ChangeScreen(2000, new MainScreen());
         return;
       }
-
-      if (Screen.Content is WithdrawalScreen) {
-        await ChangeScreen(1000, new LoadingScreen());
-        await ChangeScreen(2000, new MainScreen());
-        return;
-      }
-
     }
 
     private void Button_Clear_Click(object sender, RoutedEventArgs e) {
@@ -148,13 +139,11 @@ namespace atm_mashinbank {
       }
 
       if (Screen.Content is DepositScreen TextBox_Dep) {
-        TextBox_Dep.TextBox_Deposit.Clear();
         TextBox_Dep.TextBox_Deposit.Text = " ₽";
         return;
       }
 
       if (Screen.Content is WithdrawalScreen TextBox_With) {
-        TextBox_With.TextBox_Withdrawal.Clear();
         TextBox_With.TextBox_Withdrawal.Text = " ₽";
         return;
       }
@@ -162,6 +151,7 @@ namespace atm_mashinbank {
 
     private async void Button_Enter_Click(object sender, RoutedEventArgs e) {
       if (Screen.Content is PinCodeScreen TextBox_PIN) {
+
         if (TextBox_PIN.TextBox_PIN.Password == "1234") {
           await ChangeScreen(1000, new LoadingScreen());
           await ChangeScreen(2000, new MainScreen());
@@ -170,48 +160,61 @@ namespace atm_mashinbank {
 
         if (attempts == 2) {
           await ChangeScreen(1000, new LockedScreen());
-          MessageBox.Show("Банкомат заблокирован!\nПерезапустите приложение!");
+          Custom_MessageBox.Show("Предупреждение", "Банкомат заблокирован!", "Перезапустите приложение!");
           attempts = 0;
           return;
         }
 
         attempts++;
-        MessageBox.Show("Неправильный пароль!\nПовторите попытку!");
+
+        Custom_MessageBox.Show("Предупреждение","Введён неправильный пин-код,", "повторите попытку!");
       }
 
       if (Screen.Content is DepositScreen TextBox_Dep) {
+        if (TextBox_Dep.TextBox_Deposit.Text == " ₽") {
+          Custom_MessageBox.Show("Предупреждение", "Введите сумму и", "повторите попытку!");
+        }
+
         string depositText = TextBox_Dep.TextBox_Deposit.Text.Trim(' ', '₽');
 
         if (double.TryParse(depositText, out double depositAmount) && depositAmount <= 1000) {
           await ChangeScreen(1000, new WaitingDepositScreen());
           await ChangeScreen(2000, new SuccsessfulDepositScreen());
+
+          Custom_MessageBox.Show("Успешно", "Баланс: ", "Наличные: ");
           return;
         }
 
-        MessageBox.Show("Недостаточно средств для внесения!\nПовторите попытку!");
+        Custom_MessageBox.Show("Предупреждение", "Недостаточно средств для внесения!", "Повторите попытку!");
       }
 
       if (Screen.Content is WithdrawalScreen TextBox_With) {
+        if (TextBox_With.TextBox_Withdrawal.Text == " ₽") {
+          Custom_MessageBox.Show("Предупреждение", "Введите сумму и", "повторите попытку!");
+        }
+
         string withdrawalText = TextBox_With.TextBox_Withdrawal.Text.Trim(' ', '₽');
 
         if (double.TryParse(withdrawalText, out double withdrawalAmount) && withdrawalAmount <= 1000) {
           await ChangeScreen(1000, new WaitingWithdrawalScreen());
           await ChangeScreen(2000, new SuccessfulWithdrawalScreen());
+
+          Custom_MessageBox.Show("Успешно", "Баланс: ", "Наличные: ");
           return;
         }
 
-        MessageBox.Show("Недостаточно средств для снятия наличных!\nПовторите попытку!");
+        Custom_MessageBox.Show("Предупреждение", "Недостаточно средств для внесения!", "Повторите попытку!");
       }
     }
 
     private void Button_Empty_Click(object sender, RoutedEventArgs e) {
-      MessageBox.Show("Зачем меня создали?(", "Кнопка");
+      Custom_MessageBox.Show("Серая кнопка", "Зачем меня", "создали?(");
     }
 
     //Cash button
 
     private void Button_Input_Cash_Click(object sender, RoutedEventArgs e) {
-
+       
     }
 
     //Card button

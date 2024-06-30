@@ -57,7 +57,6 @@
     </ApplicationDefinition>
     <Compile Include="Model\BankCard.cs" />
     <Compile Include="Model\Singleton.cs" />
-    <Compile Include="Model\SoundPlayer.cs" />
     <Compile Include="Views\ATM Screens\DepositScreen.xaml.cs">
       <DependentUpon>DepositScreen.xaml</DependentUpon>
     </Compile>
@@ -93,6 +92,9 @@
     </Compile>
     <Compile Include="Views\ATM Screens\PinCodeScreen.xaml.cs">
       <DependentUpon>PinCodeScreen.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Message Box\Custom_MessageBox.xaml.cs">
+      <DependentUpon>Custom_MessageBox.xaml</DependentUpon>
     </Compile>
     <Page Include="Resources\ResourceDictionary.xaml">
       <SubType>Designer</SubType>
@@ -155,6 +157,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\ATM Screens\PinCodeScreen.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Message Box\Custom_MessageBox.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

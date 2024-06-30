@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using atm_mashinbank.Views.Message_Box;
+using System.Windows;
 using System.Windows.Controls;
 
 namespace atm_mashinbank.Views {
@@ -20,10 +21,12 @@ namespace atm_mashinbank.Views {
       if (double.TryParse(withdrawalText, out double withdrawalAmount) && withdrawalAmount <= 1000) { 
         await window.ChangeScreen(1000, new WaitingWithdrawalScreen());
         await window.ChangeScreen(2000, new SuccessfulWithdrawalScreen());
+
+        Custom_MessageBox.Show("Успешно", "Баланс: ", "Наличные: ");
         return;
       }
 
-      MessageBox.Show("Недостаточно средств для снятия наличных!\nПовторите попытку!");
+      Custom_MessageBox.Show("Предупреждение", "Недостаточно средств для снятия!", "Повторите попытку!");
     }
   }
 }

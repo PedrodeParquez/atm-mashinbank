@@ -29,7 +29,8 @@
                 <RowDefinition Height="50"/>
             </Grid.RowDefinitions>
 
-            <Image     Grid.Row="0" Source="C:\Users\Егор\source\repos\atm-mashinbank\Resources\Images\Logo_MashinBank.png" Margin="-75,-41,-75,18" Grid.RowSpan="2"/>
+            <Image Source="C:\Users\Егор\source\repos\atm-mashinbank\Resources\Images\Logo_MashinBank.png" Margin="-75,-41,-75,18" Grid.RowSpan="2"/>
+            
             <TextBlock Grid.Row="1" TextAlignment="Center" FontSize="20">
                         Здравствуйте,
                             <LineBreak/>

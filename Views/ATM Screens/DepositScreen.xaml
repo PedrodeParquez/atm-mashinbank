@@ -25,19 +25,19 @@
         </Grid.RowDefinitions>
 
         <TextBlock Grid.Row="0" Text="Внсение наличных" FontSize="25" TextAlignment="Center"/>
-        <TextBlock Grid.Row="1" Text="Вставьте купюры"   FontSize="30" TextAlignment="Center" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,15,0,0" Height="37" Width="244"/>
+        <TextBlock Grid.Row="1" Text="Вставьте купюры"  FontSize="30" TextAlignment="Center" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,15,0,0" Height="37" Width="244"/>
         <TextBox   Grid.Row="2" Background="#C92F2F" Margin="0,5,0,0" FontFamily="Arial" FontSize="35" Text=" ₽" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" CaretBrush="Transparent" Name="TextBox_Deposit" IsReadOnly="True"/>
+        
         <Button    Grid.Row="3" Style="{StaticResource CustomButtonStyle}" HorizontalAlignment="Center" VerticalAlignment="Top" Height="40" Width="98" Margin="0,10,0,0" Click="Deposit_Button_Click">
             <TextBlock TextAlignment="Center" FontSize="28" VerticalAlignment="Center" HorizontalAlignment="Center" Height="44" Width="104" >
                 Внести
             </TextBlock>
         </Button>
 
-        <Button  Grid.Row="4" Margin="320,0,10,0" Height="30" VerticalAlignment="Center" Style="{StaticResource CustomButtonStyle}" Click="Home_Button_Click">
+        <Button Grid.Row="4" Margin="320,0,10,0" Height="30" VerticalAlignment="Center" Style="{StaticResource CustomButtonStyle}" Click="Home_Button_Click">
             <TextBlock FontSize="23" Height="35" VerticalAlignment="Center" HorizontalAlignment="Center">
                 На главную
             </TextBlock>
         </Button>
-        <Label Content="Label" HorizontalAlignment="Left" Margin="-45,20,0,0" Grid.Row="2" VerticalAlignment="Top"/>
     </Grid>
 </Page>
